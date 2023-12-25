@@ -3,12 +3,12 @@ import './App.css';
 import News from './News';
 
 function App() {
-
+  let apikey = "your api key"
   let [articles, setArticles] = useState([])
   let [category, setCategory] = useState("india")
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/everything?q=${category}&from=2023-12-23&apiKey=11488d53177b479f9a4f395b5b657a47`)
+    fetch(`https://newsapi.org/v2/everything?q=${category}&from=2023-12-23&apiKey=${apikey}`)
       .then((response) => response.json())
       .then((news) => {
         setArticles(news.articles)
